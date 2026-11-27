@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+        <p class="post-meta">
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ page.date | date: "%b %-d, %Y" }}
+            </time>
+        </p>
+    </header>
+
+    <!-- Display Cover / Image using relative_url so it never breaks -->
+    {% if page.image %}
+    <div style="margin: 20px 0;">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px;">
+    </div>
+    {% elsif page.cover %}
+    <div style="margin: 20px 0;">
+        <img src="{{ page.cover | relative_url }}" alt="{{ page.title | escape }}" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px;">
+    </div>
+    {% endif %}
+
+    <div class="post-content e-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+</article>

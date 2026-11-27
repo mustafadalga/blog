@@ -1,0 +1,11 @@
+title: "Mustafa Dalga - Frontend Performance & Modernization Specialist"
+theme: minima
+baseurl: "/blog"
+url: "https://mustafadalga.github.io/blog"
+encoding: "utf-8"
+permalink: /:title/
+
+
+header_pages:
+  - index.md
+  - tr.md
